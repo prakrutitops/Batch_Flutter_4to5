@@ -1,0 +1,49 @@
+void ->return type
+
+main -> method or function  name
+
+print-> whenever you want to print something
+
+
+return type
+
+void->return type null
+int ->numeric value
+double->8 byte
+character->single character
+string->sentence
+
+
+void main()
+{
+	//main block
+}
+
+->every program's execution is starts with main method
+
+\n -> new line
+\t -> tab
+
+
+
+int ->integer->numeric value
+
+variable declaration:
+
+data_type variable_name = value;
+
+
+
+int price = 500
+int age = 19;//variable value assign
+
+
+
+
+
+
+
+
+
+
+
