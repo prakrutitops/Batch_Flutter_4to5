@@ -1,0 +1,89 @@
+
+1.
+void main()
+{
+  print("Hello World From Tops Technologies");
+}
+
+2.
+void main()
+{
+
+  print("\n \t Android");
+  print("\n \t Java");
+  print("\n \t Flutter");
+  print("\n \t Ios");
+
+}
+
+3.
+void main()
+{
+
+    // Arithmetic Operators
+    //Single Line Comment
+    
+    /*
+     
+     Multi
+     Line
+     Comment
+    
+    
+     */
+    
+    
+    int a = 5;
+    int b = 3;
+
+    int sum = a+b;
+    print(sum);
+
+    int sub = a-b;
+    print(sub);
+
+    int mul = a*b;
+    print(mul);
+
+    double div = a/b;
+    print(div);
+
+    int mod = a % b;
+    print(mod);
+}
+
+4.
+
+//Shorthandop,Assignment Op
+void main()
+{
+    //c+=a;//c=c+a
+    // b-=a;//b=b-a
+
+    int a = 4;
+    int b= 2;
+
+    a+=b;//a=a+b=4+2=6
+    print(a);//6
+
+    a-=b;//a=a-b;//6-2=4
+    print(a);//4
+
+    a*=b;
+    print(a);
+
+
+}
+
+5.
+void main()
+{
+    //Area of Circle 
+    double PI = 3.14;
+    int r = 5;
+
+    double area = PI*r*r;
+    print("Area of Circle is : $area");
+}
+
+
