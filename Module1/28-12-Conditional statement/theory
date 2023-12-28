@@ -1,0 +1,31 @@
+Conditional Statement:
+
+if,else if,else,nested if
+
+
+switch,case,break;
+
+
+if-condition true
+
+else-condition false
+
+if(age>18)
+{
+	//true
+}
+else
+{
+	//false	
+}
+
+a==5;
+
+
+70-A Grade
+60 - B Grade
+50-C Grade
+40-D Grade
+Fail
+
+
