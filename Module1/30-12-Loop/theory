@@ -1,0 +1,47 @@
+Switch,Case
+
+Loop:
+for
+while
+do while
+for..in
+foreach 
+
+syntax:
+
+Entry Control Loop
+
+1)
+for(initialization;condition;incre/decre);
+{
+	logic
+}
+
+++
+--
+
+	
+2)
+
+initialization;
+
+while(condition)
+{
+	logic;
+	incre/decre;
+}
+
+Exit Control Loop:
+3) Do While:
+
+initialization;
+
+do
+{
+	logic;
+	incre/decre;
+}
+while(condition);
+
+
+
