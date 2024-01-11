@@ -1,0 +1,42 @@
+Constructor: When method having a same as a classname
+
+Default Constructor
+Parameterized Constructor
+Named Constructor
+
+
+class A
+{
+	A()
+	{
+
+	}
+	
+	
+	display()
+	{
+		
+	}
+	
+}
+
+Function and parameters
+
+1)optional parameters
+2)named parameters
+3)default parameters
+
+
+Functions:
+
+1)with return type with para
+2)with return type without para
+3)with para without return type
+4)without return type without para
+
+
+
+
+
+
+
