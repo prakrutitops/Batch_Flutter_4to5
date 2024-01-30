@@ -1,0 +1,20 @@
+QUERY 
+
+SQL ->Structured queyr language
+MYSQL ->database
+
+types of commands in mysql
+
+1)DDL : Data Definition Language
+-> Create,alter,Drop,truncate,rename
+
+2)DML : Data Manipulation Language
+-> insert,update,delete
+
+3)DQL : Data Query Language
+->select
+
+4)DCL : Data Control Language
+->rollback,commit
+
+
