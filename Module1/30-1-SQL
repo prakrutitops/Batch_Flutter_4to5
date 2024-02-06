@@ -60,6 +60,18 @@ insert into tablename (database Field nm) values ('control value')
 INSERT INTO tablename (countrynm) VALUES('india'), ('pakistan')
 
 
+
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30), @PostalCode nvarchar(10)
+
+ASSELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode
+
+GO;
+
+//View
+
+EXEC SelectAllCustomers City = "London", PostalCode = "WA1 1DP";
+
+
 13. update data
 update tablenm set databasefieldnm='controlvalue' where id='id'
 
