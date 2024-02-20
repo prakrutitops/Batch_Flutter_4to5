@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int rows = 4; // Number of rows in the pattern
+    int currentNumber = 10;
+
+    // Outer loop for rows
+    for (int i = rows; i >= 1; i--) {
+        // Print leading spaces to align the numbers
+        for (int space = 0; space < (4 - i) * 2; space++) {
+            printf("");
+        }
+
+        // Print the numbers in each row
+        int temp = currentNumber;
+        for (int j = 0; j < i; j++) {
+            printf("%d ", temp);
+            if (j < i - 1)
+                temp -= (rows - j);
+        }
+        printf("\n");
+        currentNumber -= 1;
+    }
+
+    return 0;
+}
