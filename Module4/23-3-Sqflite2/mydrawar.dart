@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'addcontact.dart';
 import 'colors.dart';
+import 'contact_list.dart';
 import 'home.dart';
 
 class MyDrawal extends StatelessWidget
@@ -57,8 +58,8 @@ class MyDrawal extends StatelessWidget
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {
-               // Navigator.push(
-                  //  context, MaterialPageRoute(builder: (_) => ContactList()));
+               Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => ContactList()));
               },
             ),
             Divider(

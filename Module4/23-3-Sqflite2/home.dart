@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage>
                                                 ),
                                                 IconButton(
                                                   onPressed: () {
-                                                    //_delete(item['_id']);
+                                                    _delete(item['_id']);
                                                   },
                                                   icon: Icon(Icons.delete),
                                                 ),
@@ -192,5 +192,11 @@ class _HomePageState extends State<HomePage>
     allRows.forEach(print);
     allCategoryData = allRows;
     setState(() {});
+  }
+  void _delete(int id) async {
+    // Assuming that the number of rows is the id for the last row.
+    final rowsDeleted = await dbHelper.delete(id);
+    print('deleted $rowsDeleted row(s): row $id');
+    _query();
   }
 }

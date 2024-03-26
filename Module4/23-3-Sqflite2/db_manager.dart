@@ -94,5 +94,18 @@ class DbHelper
     return await db.query(tableContact);
   }
 
+  //delete contact
+  Future<int> deleteContact(int id) async {
+    Database db = await instance.database;
+    return await db.delete(tableContact, where: '$columnId = ?', whereArgs: [id]);
+  }
+
+  //delete category
+  Future<int> delete(int id) async
+  {
+    Database db = await instance.database;
+    return await db.delete(table, where: '$columnId = ?', whereArgs: [id]);
+  }
+
 
 }
