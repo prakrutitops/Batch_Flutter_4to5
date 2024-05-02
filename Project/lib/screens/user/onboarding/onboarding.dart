@@ -10,6 +10,7 @@ import 'package:project123/screens/user/onboarding/widgets/pages/work/work_dark_
 import 'package:project123/screens/user/onboarding/widgets/pages/work/work_light_card_content.dart';
 import 'package:project123/screens/user/onboarding/widgets/pages/work/work_text_column.dart';
 import '../../constants.dart';
+import '../login/login.dart';
 import 'widgets/header.dart';
 import 'widgets/next_page_button.dart';
 import 'widgets/onboarding_page_indicator.dart';
@@ -79,7 +80,7 @@ class _OnboardingState extends State<Onboarding>
 
   void _goToLogin()
   {
-    //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Login()));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Login()));
   }
 
   @override

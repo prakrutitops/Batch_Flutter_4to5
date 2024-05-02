@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../constants.dart';
 
 class Header extends StatelessWidget {
-  final VoidCallback onSkip;
+   final VoidCallback onSkip;
 
   const Header({
     required this.onSkip,

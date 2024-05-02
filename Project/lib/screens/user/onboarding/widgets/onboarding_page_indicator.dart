@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
 
-class OnboardingPageIndicator extends StatelessWidget {
+class OnboardingPageIndicator extends StatelessWidget
+{
   final int currentPage;
   final Widget child;
 
@@ -13,7 +14,8 @@ class OnboardingPageIndicator extends StatelessWidget {
     required this.child,
   });
 
-  Color _getPageIndicatorColor(int pageIndex) {
+  Color _getPageIndicatorColor(int pageIndex)
+  {
     return currentPage > pageIndex ? kWhite : kWhite.withOpacity(0.25);
   }
 
@@ -22,8 +24,10 @@ class OnboardingPageIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: _OnboardignPageIndicatorPainter(
+    return CustomPaint
+      (
+      painter: _OnboardignPageIndicatorPainter
+        (
         color: _getPageIndicatorColor(0),
         startAngle: (4 * indicatorLength) - (indicatorLength + indicatorGap),
         indicatorLength: indicatorLength,
