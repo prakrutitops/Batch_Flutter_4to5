@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:project123/screens/user/front/front.dart';
 import 'package:project123/screens/user/login/widgets/custom_clippers/brown_top_clipper.dart';
 import 'package:project123/screens/user/login/widgets/custom_clippers/gold_top_clipper.dart';
 import 'package:project123/screens/user/login/widgets/custom_clippers/lightgold_top_clipper.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../constants.dart';
 import 'package:http/http.dart' as http;
 import '../register/register.dart';
@@ -22,6 +24,7 @@ class LoginPage extends State<Login>
   var sessionData;
   var identifier_data;
   late bool newuser;
+  late SharedPreferences sharedPreferences;
 
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
 
@@ -58,8 +61,21 @@ class LoginPage extends State<Login>
   @override
   void initState() {
     // TODO: implement initState
-    super.initState();
-    //check_if_already_login();
+    //super.initState();
+    check_if_already_login();
+
+  }
+
+  void check_if_already_login() async
+  {
+
+    sharedPreferences = await SharedPreferences.getInstance();//initialize sharedprefrence
+    newuser = sharedPreferences.getBool('ewishes') ?? true;
+
+    if(newuser==false)
+    {
+      Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => Front()));
+    }
 
   }
 
@@ -75,7 +91,8 @@ class LoginPage extends State<Login>
 
     var data = json.decode(response.body);
 
-    if(data==0) {
+    if(data==0)
+    {
       final snackBar = SnackBar(
         content: Text('Something Is Wrong...',
           style: TextStyle(
@@ -85,25 +102,15 @@ class LoginPage extends State<Login>
         duration: Duration(seconds: 5),
         backgroundColor: kDarkBrown,
       );
-      // scaffoldKey.currentState.showSnackBar(snackBar);
+       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
-    else {
-      //viewSessionData();
-      //viewIdentifierData();
-
+    else
+    {
       print("login done");
+      sharedPreferences.setBool('ewishes', false);
+      sharedPreferences.setString('username',username.text.toString());
+      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => Front()));
 
-
-      //Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => DashBoard()));
-
-
-      // if(identifier_data[0]['identifier']=="User"){
-      //   //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Front()));
-      // }
-      // else{
-      //   print("login fail");
-      //   //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => AdminFront()));
-      // }
     }
   }
 
@@ -370,4 +377,6 @@ class LoginPage extends State<Login>
       ),
     );
   }
+
+
 }
