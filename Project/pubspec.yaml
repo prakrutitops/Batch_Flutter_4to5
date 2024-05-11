@@ -38,6 +38,20 @@ dependencies:
   http: ^1.2.0
   connectivity: ^3.0.6
   shared_preferences: ^2.2.3
+  share: ^2.0.4
+  dio: ^5.4.3+1
+  path_provider: ^2.0.11
+  permission_handler: any
+  image_picker: any
+  get: ^4.6.6
+  get_storage: ^2.1.1
+  cached_network_image: ^3.3.1
+  flutter_svg: ^2.0.10+1
+  fluttertoast: ^8.2.5
+  image_gallery_saver: ^2.0.3
+  file_picker: ^8.0.0+1
+  sqflite: ^2.3.2
+  path: any
 
 
 dev_dependencies:
