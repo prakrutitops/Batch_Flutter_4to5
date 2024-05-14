@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:project123/screens/admin/front/front.dart';
 import 'package:project123/screens/user/front/front.dart';
 import 'package:project123/screens/user/login/widgets/custom_clippers/brown_top_clipper.dart';
 import 'package:project123/screens/user/login/widgets/custom_clippers/gold_top_clipper.dart';
@@ -90,28 +91,37 @@ class LoginPage extends State<Login>
     });
 
     var data = json.decode(response.body);
+      if(username.text.toString()=="admin" && password.text.toString()=="1"&& mobileno.text.toString()=="1")
+      {
+        sharedPreferences.setBool('ewishesadmin', false);
+        sharedPreferences.setString('username',username.text.toString());
+        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => AdminFront()));
+      }
+      else
+        {
+          if(data==0)
+          {
+            final snackBar = SnackBar(
+              content: Text('Something Is Wrong...',
+                style: TextStyle(
+                  color: kLightGold ,
+                ),
+              ),
+              duration: Duration(seconds: 5),
+              backgroundColor: kDarkBrown,
+            );
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          }
+          else
+          {
+            print("login done");
+            sharedPreferences.setBool('ewishes', false);
+            sharedPreferences.setString('username',username.text.toString());
+            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => Front()));
 
-    if(data==0)
-    {
-      final snackBar = SnackBar(
-        content: Text('Something Is Wrong...',
-          style: TextStyle(
-            color: kLightGold ,
-          ),
-        ),
-        duration: Duration(seconds: 5),
-        backgroundColor: kDarkBrown,
-      );
-       ScaffoldMessenger.of(context).showSnackBar(snackBar);
-    }
-    else
-    {
-      print("login done");
-      sharedPreferences.setBool('ewishes', false);
-      sharedPreferences.setString('username',username.text.toString());
-      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => Front()));
+          }
+        }
 
-    }
   }
 
   @override
@@ -309,7 +319,7 @@ class LoginPage extends State<Login>
                                       duration: Duration(seconds: 2),
                                       backgroundColor: kDarkBrown,
                                     );
-                                    // scaffoldKey.currentState.showSnackBar(snackBar);
+                                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
                                   }
                                 }
                               },
