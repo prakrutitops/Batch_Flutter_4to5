@@ -1,0 +1,6 @@
+1.git init
+2.git add -A
+3.git status
+4.git commit -m "First Commit"
+5.git remote add origin https://github.com/prakrutitops/Batch_Flutter_2to3.git
+6.git push origin master
